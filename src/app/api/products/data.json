@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "ASTON MARTIN",
+      "slug": "ASTON-MARTIN",
+      "price": 220000,
+      "image": "/ASTON-MARTIN.png",
+      "description": "ASTON MARTIN V12",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "TESLA",
+      "slug": "TESLA",
+      "price": 74990,
+      "image": "/tesla.png",
+      "description": "Tesla Model S",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "JAGUAR",
+      "slug": "jbl",
+      "price": 13000,
+      "image": "/jaguar.png",
+      "description": "Jaguar XJ 2011",
+      "featured": true
+    }
+  ]
+}
