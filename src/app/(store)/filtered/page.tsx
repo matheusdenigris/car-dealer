@@ -8,8 +8,8 @@ export default function FilteredPage() {
 
   return (
     <div className="relative grid grid-cols-3 gap-10">
-      {filteredVehicles.map((vehicle) => (
-        <div key={vehicle.Model_ID} className="group relative rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-center">
+      {filteredVehicles.map((vehicle, index) => (
+        <div key={`${vehicle.Model_ID}-${index}`} className="group relative rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-center">
           <Image
             src="/car-generic.png"
             className="group-hover:scale-105 transition-transform duration-500"
