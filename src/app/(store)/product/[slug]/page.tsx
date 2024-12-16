@@ -3,9 +3,9 @@ import { api } from '@/data/api'
 import { Product } from '@/types/products'
 import { Metadata } from 'next'
 interface ProductProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 async function getProduct(slug: string): Promise<Product> {
   const response = await api(`/products/${slug}`)
@@ -16,13 +16,14 @@ async function getProduct(slug: string): Promise<Product> {
 export async function generateMetadata({
   params,
 }: ProductProps): Promise<Metadata> {
-  const product = await getProduct(params.slug)
+  const product = await getProduct((await params).slug)
   return {
     title: product.title,
   }
 }
 
-export default async function ProductPage({ params }: ProductProps) {
+export default async function ProductPage(props: { params: ProductProps['params'] }) {
+  const params = await props.params;
   const product = await getProduct(params.slug)
   return (
     <div className="relative grid max-h-[860px] grid-cols-3">

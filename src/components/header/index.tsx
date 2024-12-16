@@ -10,6 +10,7 @@ import { Button } from "../ui/button";
 import { useApp } from "@/contexts/app-context";
 import { useHeader } from "./useHeader";
 import { useRouter } from "next/navigation";
+import SearchLoading from "@/app/search/loading";
 
 export function Header() {
   const router = useRouter()
@@ -27,7 +28,7 @@ export function Header() {
           Develops Car Dealer
         </Link>
 
-        <Suspense fallback={null}>
+        <Suspense fallback={<SearchLoading />}>
           <SearchForm />
         </Suspense>
 
